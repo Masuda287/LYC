@@ -3,8 +3,8 @@
 <form action="U1-1-1-term.php" method="post">
     
     <h1>会員のお客様</h1>
-    <p>ユーザーIDとパスワードを入力してください</p>
-    ユーザーID<input type="text" name="u_name" class=" is-vcentered"><br>
+    <p>ユーザー名とパスワードを入力してください</p>
+    ユーザー名<input type="text" name="u_name" class=" is-vcentered"><br>
     パスワード<input type="password" name="password" class=" is-vcentered"><br>
     <input type="submit" value="ログイン" >
     </form>
