@@ -9,7 +9,7 @@
                     if($ss==0){
                     echo '<a href="" class="is-size-6 has-text-link">ログイン</a>'; 
                     }else{
-                    echo '<a href="">ログアウト</a>'; 
+                    echo '<a href="logout.php">ログアウト</a>'; 
                     }
                     ?>
 </dev>

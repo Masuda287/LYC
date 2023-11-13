@@ -1,9 +1,9 @@
         <?php require 'header.php'; ?>
         <?php require 'menu.php'; ?>
 <h1>会員のお客様</h1>
-    <p>ユーザーIDとパスワードを入力してください</p>
+    <p>ユーザー名とパスワードを入力してください</p>
     <form action="U1-1-1-term.php" method="post">
-    ユーザーID<input type="text" name="u_name" class=" is-vcentered"><br>
+    ユーザー名<input type="text" name="u_name" class=" is-vcentered"><br>
     パスワード<input type="password" name="password" class=" is-vcentered"><br>
     <input type="submit" value="ログイン" >
         <p>ユーザー名もしくはパスワードが違います</p>
