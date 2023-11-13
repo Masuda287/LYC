@@ -4,9 +4,9 @@
 <h1>登録完了</h1>
 <?php
 $pdo=new PDO($connect,USER,PASS);
-$sql=$pdo->prepare( 'insert into customer values(?,?,?,?,?,?)');
-$sql->execute([$_SESSION['customer'],$_POST['card_num'],$_POST['card_name'],
-$_POST['dl_m'],$_POST['dl_y'],$_POST['code']]);
+$sql=$pdo->prepare( 'insert into Credit values(?,?,?,?,?,?)');
+$sql->execute([$_SESSION['customer']['c_id'],$_GET['card_num'],$_GET['card_name'],
+$_GET['dl_m'],$_GET['dl_y'],$_GET['code']]);
 echo 'クレジット情報を登録しました';
 ?>
 <?php require 'footer.php';?>

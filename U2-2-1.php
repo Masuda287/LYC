@@ -7,7 +7,7 @@
 
 $card_num=$card_name=$dl_m=$dl_y=$code='';
 
-echo '<form action="u2-2-2.php" method="post">';
+echo '<form action="U2-2-2.php" method="post">';
 echo '<table>';
 echo '<tr><td>カード番号</td><td>';
 echo '<input type="text" name="card_num" >';
@@ -45,7 +45,7 @@ echo '<tr><td>セキュリティーコード</td><td>';
 echo '<input type="text" name="code" >';
 echo '</td></tr>';
 echo'</table>';
-echo '<p><button type="submit"><a href="u2.php">戻る</a></button></p>';
+echo '<p><button type="submit"><a href="U2.php">戻る</a></button></p>';
 echo '<p><button type="submit">確認</button></p>';
 echo '</form>';
 

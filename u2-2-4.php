@@ -25,6 +25,6 @@ if (isset($_SESSION['customer'])){
   echo $code;
   echo '</td></tr>';
   echo'</table>';
-  echo '<p><button type="submit"><a href="u2-2-1.php">戻る</a></button><button type="submit"><a href="u2-2-4.php">更新</a></button></p>';
+  echo '<p><button type="submit"><a href="U2-2-1.php">戻る</a></button><button type="submit"><a href="U2-2-4.php">更新</a></button></p>';
 
 ?>
