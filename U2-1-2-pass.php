@@ -32,6 +32,7 @@ echo '</td></tr>';
 echo '<tr><td>パスワード確認</td><td>';
 echo '<input type="password" name="password1" value="">';
 echo '</td></tr>';
+echo 'パスワードが異なってます';
 echo '</table>';
 echo '<input type="submit" value="確認">';
 echo '</form>';

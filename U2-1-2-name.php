@@ -12,6 +12,7 @@ if(isset($_SESSION['customer'])){
     $password=$_SESSION['customer']['password'];
 }
 echo '<h1>会員情報更新</h1>';
+echo '既に同じログイン名のユーザーが存在するため使用できません';
 echo '<form action="U2-1-2-term.php"method="post">';
 echo '<table>';
 echo '<tr><td>姓</td><td>';
