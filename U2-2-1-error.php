@@ -3,7 +3,6 @@
 <?php require 'header.php';?>
 <?php require 'menu.php'; ?>
 
-
     <h1>クレジットカード登録</h1>
 
 <?php
@@ -49,6 +48,7 @@ echo '</select>年</td></tr>';
 echo '<tr><td>セキュリティーコード</td><td>';
 echo '<input type="text" name="code" max=999 >';
 echo '</td></tr>';
+echo '<p>入力されていない項目があります</p>';
 echo'</table>';
 echo '<p><a href="U2.php">戻る</a></p>';
 echo '<p><button type="submit">確認</button></p>';
