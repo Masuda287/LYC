@@ -7,9 +7,9 @@
                     <?php
                     $ss=0;
                     if($ss==0){
-                    echo '<a href="U1-1.php" class="is-size-6 has-text-link">ログイン</a>'; 
+                    echo '<a href="U1-1-1.php" class="is-size-6 has-text-link">ログイン</a>'; 
                     }else{
-                    echo '<a href="logout.php">ログアウト</a>'; 
+                    echo '<a href="">ログアウト</a>'; 
                     }
                     ?>
 </dev>
@@ -19,10 +19,10 @@
 <header class="drawer-menu">
   <ul>
     <li><a href="U2.php">マイページ</a></li>
-    <li><a href="U2-3-1.php">ライブラリ</a></li>
+    <li><a href="U2-2-4.php">ライブラリ</a></li>
     <li><a href="#">Book</a></li>
     <li><a href="#">Movie</a></li>
     <li><a href="#">Music</a></li>
-    <li><a href="U2-4-1.php">閲覧履歴</a></li>
+    <li><a href="U2-2-3.php">閲覧履歴</a></li>
   </ul>
 </header>
