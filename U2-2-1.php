@@ -7,18 +7,14 @@
     <h1>クレジットカード登録</h1>
 
 <?php
-
-$card_num=$card_name=$dl_m=$dl_y=$code='';
-
 echo '<form action="U2-2-1-term.php" method="post">';
 echo '<table>';
 echo '<tr><td>カード番号</td><td>';
-echo '<input type="text" name="card_num" max=9999999999999999 min=0000000000000001>';
+echo '<input type="text" name="card_num" maxlength="16">';
 echo '</td></tr>';
 echo '<tr><td>名義</td><td>';
 echo '<input type="text" name="card_name">';
 echo '</td></tr>';
-
 echo '<tr><td>有効期限</td><td>';
 echo '<td><select name="dl_m">';
 echo '<option value=""> </option>';
@@ -47,14 +43,11 @@ echo '<option value=29>29</option>';
 echo '<option value=30>30</option>';
 echo '</select>年</td></tr>';
 echo '<tr><td>セキュリティーコード</td><td>';
-echo '<input type="text" name="code" max=999 >';
+echo '<input type="text" name="code" maxlength="3" >';
 echo '</td></tr>';
 echo'</table>';
-echo '<p><a href="U2.php">戻る</a></p>';
-echo '<p><button type="submit">確認</button></p>';
+echo '<p><a href="U2.php"><button type="button">戻る</button></a><input type="submit" value="確認"></p>';
 echo '</form>';
- 
-
 ?>
 
 <?php require 'footer.php';?>

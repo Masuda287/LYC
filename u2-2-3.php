@@ -8,9 +8,18 @@
 $id = $_SESSION['customer']['c_id'];
 $pdo=new PDO($connect,USER,PASS);
 $sql=$pdo->prepare( 'insert into Credit values(?,?,?,?,?,?)');
-$sql->execute([$id,$_GET['card_num'],$_GET['card_name'],
-$_GET['dl_m'],$_GET['dl_y'],$_GET['code']]);
+$sql->execute([$id,$_SESSION['toroku']['card_num'],$_SESSION['toroku']['card_name'],
+$_SESSION['toroku']['dl_m'],$_SESSION['toroku']['dl_y'],$_SESSION['toroku']['code']]);
+
+$_SESSION['Credit']=[
+    'c_id'=>$id, 'card_num'=>$_SESSION['toroku']['card_num'],
+    'card_name'=>$_SESSION['toroku']['card_name'],'dl_m'=>$_SESSION['toroku']['dl_m'],
+     'dl_y'=>$_SESSION['toroku']['dl_y'],'code'=>$_SESSION['toroku']['code']];
+
+unset($_SESSION['toroku']);
 echo 'クレジット情報を登録しました';
+echo '<p><a href="U1.php"><button type="button">ホーム</button></p>';
+
 ?>
 <?php require 'footer.php';?>
 

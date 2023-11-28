@@ -15,7 +15,6 @@ echo '</td></tr>';
 echo '<tr><td>名義</td><td>';
 echo '<input type="text" name="card_name"  value="',$_SESSION['kosin']['card_name'],'">';
 echo '</td></tr>';
-
 echo '<tr><td>有効期限</td><td>';
 echo '<td><select name="dl_m">';
 echo '<option value=',$_SESSION['kosin']['dl_m'],'>',$_SESSION['kosin']['dl_m'],'</option>';
@@ -46,7 +45,7 @@ echo '</select>年</td></tr>';
 echo '<tr><td>セキュリティーコード</td><td>';
 echo '<input type="text" name="code" maxlength="3"  value="',$_SESSION['kosin']['code'],'">';
 echo '</td></tr>';
-echo '<p>入力されていない項目があります</p>';
+echo '<p>カード番号もしくはセキュリティコードは数字で入力してください</p>';
 echo'</table>';
 echo '<p><a href="U2-2-4.php"><button type="button">戻る</button></a><input type="submit" value="確認"></p>';
 echo '<p>';

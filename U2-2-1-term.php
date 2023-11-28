@@ -1,5 +1,9 @@
 <?php session_start();?>
 <?php 
+$_SESSION['toroku']=[
+    'card_num'=>$_POST['card_num'],'card_name'=>$_POST['card_name'],
+    'dl_m'=>$_POST['dl_m'],'dl_y'=>$_POST['dl_y'],
+    'code'=>$_POST['code']];
 
 if(empty($_POST['card_num'])){
     header("Location:U2-2-1-error.php");
@@ -11,15 +15,12 @@ if(empty($_POST['card_num'])){
     header("Location:U2-2-1-error.php");
 }else if(empty($_POST['code'])){
     header("Location:U2-2-1-error.php");
-}else{
-
-$num=$_POST['card_num'];
-$name=$_POST['card_name'];
-$month=$_POST['dl_m'];
-$year=$_POST['dl_y'];
-$code=$_POST['code'];
-$URL="U2-2-2.php?card_num={$num}&card_name={$name}&dl_m={$month}&dl_y={$year}&code={$code}";
-    header("Location:".$URL);
+}else  if (!preg_match('/[0-9]+/', $_POST['card_num'])){
+    header("Location:U2-2-1-numerror.php");
+}else if (!preg_match('/[0-9]+/', $_POST['code'])){
+    header("Location:U2-2-1-numerror.php");
+}else {
+    header("Location: U2-2-2.php");
 }
 
 ?>
