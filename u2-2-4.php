@@ -18,9 +18,6 @@ if (isset($_SESSION['Credit'])){
   echo '<tr><td>有効期限</td><td>';
   echo $_SESSION['Credit']['dl_m'],'月',$_SESSION['Credit']['dl_y'],'年';
   echo '</td></tr>';
-  echo '<tr><td>セキュリティーコード</td><td>';
-  echo $_SESSION['Credit']['code'];
-  echo '</td></tr>';
   echo'</table>';
   echo '<p><a href="U2.php"><button type="button">戻る</a></button><a href="U2-2-5.php"><button type="submit">更新</button></a></p>';
 }
