@@ -11,6 +11,7 @@
    <input type="radio" name="t" id="t4"><label for="t4" class="tab">音楽</label>
    <div class="tabcontent" id="tabcontent1">
    <?php
+  
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->prepare('select * from Purchase as P join Purchase_detail as Pd on P.p_id=Pd.p_id join Shohin as S on Pd.s_id=S.s_id where P.c_id=? order by S.s_id asc ');
     $sql->execute([$_SESSION['customer']['c_id']]);
@@ -27,7 +28,7 @@
     $sql->execute([$_SESSION['customer']['c_id']]);
     foreach($sql as $row){
         echo '<img  src="thumbnail/',$row['s_id'],'.png" width="150px">';
-        echo '<br/>',$row['s_name'];
+        echo '<br/>',$row['s_name'],'</br>';
     }
 ?>
    </div>
@@ -37,7 +38,7 @@
     $sql->execute([$_SESSION['customer']['c_id']]);
     foreach($sql as $row){
         echo '<img  src="thumbnail/',$row['s_id'],'.png" width="150px">';
-        echo '<br/>',$row['s_name'];
+        echo '<br/>',$row['s_name'],'</br>';
     }
     
 ?>
@@ -50,7 +51,7 @@
         echo '<img  src="thumbnail/',$row['s_id'],'.png" width="150px">';
         echo '<br/>',$row['s_name'];
     }
-    
+
 ?>
    </div>
 </div>

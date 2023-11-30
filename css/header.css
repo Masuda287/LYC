@@ -1,6 +1,6 @@
 .menu-checkbox {
-    display: none;
-  }
+  display: none;
+}
   
   /* メニューボタンの装飾 */
   .menu-button {
@@ -99,7 +99,7 @@
   .menu-checkbox:checked ~ .menu-background {
     display: block;
   }
-  ul{
-    display: flex;
-    text-align:center;
-}
+  dav{
+    position:sticky;
+    top:0;
+  }

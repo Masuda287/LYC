@@ -1,14 +1,14 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <?php require 'db-connect.php';?>
 <?php require 'header.php'; ?>
 <?php require 'menu.php'; ?>
-<?php $pdo=new PDO($connect,USER,PASS); ?>
 <form action="U1-2-2.php" method="post">
         <input type="text" name="keyword">
         <input type="submit" src="parts/search.img" width="20" heigh="20" alt="検索">
-        <a href="U1-3-1-show.php"><img src="parts/cart.jpg" alt="カート"></a>
+        <a href="U1-3-1-show.php"><img src="parts/cart.jpg" width="100" heigh="100" alt="カート"></a>
     </form>
     <?php   
+      $pdo=new PDO($connect,USER,PASS);
             echo    '<br/><a href="U1-2-1.php">カテゴリ</a>';
             echo    '<br/><img alt="image" src="thumbnail/0.png"><br/>';
             $sql10=$pdo->query('select * from Recommend');

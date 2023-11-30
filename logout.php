@@ -1,9 +1,7 @@
 <?php session_start(); ?>
-<?php require 'header.php'; ?>
-<?php require 'menu.php'; ?>
 <?php
-if(isset($_SESSION['Customer'])) {
-    unset($_SESSION['Customer']);
+if(isset($_SESSION['customer'])) {
+    unset($_SESSION['customer']);
+    header("Location:U1.php"); 
 }
 ?>
-<?php require 'footer.php'; ?>

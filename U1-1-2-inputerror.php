@@ -18,7 +18,7 @@ echo  '<tr><td>生年月日</td><td>';
 echo  '<input type="text" maxlength="8" name="b_day" value="',$_SESSION['kyaku']['b_day'], '">';
 echo  '</td></tr>';
 echo  '<tr><td>メールアドレス</td><td>';
-echo  '<input type="text"  maxlength="50" name="mail"  value="',$_SESSION['kyaku']['mail'], '">';
+echo  '<input type="email"  maxlength="50" name="mail"  value="',$_SESSION['kyaku']['mail'], '">';
 echo  '</td></tr>';
 echo  '<tr><td>パスワード</td><td>';
 echo  '<input type="password" maxlength="20" name="password" value="',$_SESSION['kyaku']['password'], '">';

@@ -3,6 +3,7 @@
 <?php require 'menu.php';?>
 <?php require 'db-connect.php';?>
 <?php
+
     $pdo=new PDO($connect,USER,PASS);
     $sql=$pdo->prepare('select H.s_id,S.s_name,S.price from History as H inner join Shohin as S  on H.s_id=S.s_id where H.c_id=? order by H.w_day asc limit 20 ');
     $sql->execute([$_SESSION['customer']['c_id']]);
@@ -16,5 +17,6 @@
         echo  '<input type="hidden" name="s_id" value="',$row['s_id'],'">';
         echo  '<input type="submit" value="カートに入れる"></form>';
     }
+
 ?>
 <?php require 'footer.php' ?>
