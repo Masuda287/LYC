@@ -19,7 +19,7 @@ echo '<br>';
 ?>
 <nac class="level">
 <b class="level-item">
-<a href="#" class="button is-medium">戻る</a>
+<a href="U2.php" class="button is-medium">戻る</a>
 <p class="has-text-white">______________</p>
 <a href="U2-5-2.php" class="button is-info is-medium">削除</a>
 </b>
