@@ -30,6 +30,9 @@ new Vue({
         move_menu_manga(){
             if(this.manga==0){
                 this.manga++;
+                if(this.syosetu==1){
+                    this.move_menu_syosetu();
+                }
             }else{
                 this.manga--;
             }
@@ -37,6 +40,9 @@ new Vue({
         move_menu_syosetu(){
             if(this.syosetu==0){
                 this.syosetu++;
+                if(this.manga==1){
+                    this.move_menu_manga();
+                }
             }else{
                 this.syosetu--;
             }
@@ -46,6 +52,9 @@ new Vue({
                 this.movie++;
             }else{
                 this.movie--;
+                if(this.eiga==1){
+                    this.move_menu_eiga();
+                }
             }
         },
         move_menu_eiga(){
