@@ -20,7 +20,7 @@
                 echo    '<p>既に同一商品がカートに入っています</p>';
             }
         }else{
-            '<p>既に購入している商品です</p>';
+            echo '<p>既に購入している商品です</p>';
         }
     }else{
         if(!isset($_SESSION['product'])){
