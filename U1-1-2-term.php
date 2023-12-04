@@ -1,7 +1,14 @@
-<?php session_start(); ?>
 <?php require 'db-connect.php'; ?>
 <?php 
-$pdo=new PDO($connect,USER,PASS);
+
+$name1=$_POST['u_name'];
+$login1=$_POST['login'];
+$birth1=$_POST['b_day'];
+$mail1=$_POST['mail'];
+$password1=$_POST['password'];
+$URL="U1-1-3.php?u_name={$name1}&login={$login1}&b_day={$birth1}&mail={$mail1}&password={$password1}";
+
+
 $sql = $pdo->query('select u_name from Customer');
 $sql->execute();
 $pdo=null;
@@ -13,31 +20,14 @@ if($name['u_name']==$_POST['login']){
     $cnt = $cnt + 1;   
     } 
 }
-$_SESSION['kyaku']=[
-    'u_name'=>$_POST['u_name'],'login'=>$_POST['login'],
-    'b_day'=>$_POST['b_day'],'mail'=>$_POST['mail'],
-    'password'=>$_POST['password']];
 
-    if(empty($_POST['u_name'])){
-        header("Location:U1-1-2-inputerror.php");
-    }else if(empty($_POST['login'])){
-        header("Location:U1-1-2-inputerror.php");
-    }else if(empty($_POST['b_day'])){
-        header("Location:U1-1-2-inputerror.php");
-    }else if(empty($_POST['mail'])){
-        header("Location:U1-1-2-inputerror.php");
-    }else if(empty($_POST['password'])){
-        header("Location:U1-1-2-inputerror.php");
-    }else if(empty($_POST['pass_c'])){
-        header("Location:U1-1-2-inputerror.php");
-            }else if (!preg_match('/[0-9]+/', $_POST['b_day'])){
-                header("Location:U1-1-2-birtherror.php");
-            }else if($cnt == 0 && $_POST['password']==$_POST['pass_c']){
-                header("Location:U1-1-3.php");    
-            } else if($cnt > 0 && $_POST['password']==$_POST['pass_c']) {
-            header("Location:U1-1-2-loginerror.php");
-            } else if($cnt == 0 && $_POST['password']!=$_POST['pass_c']){
-            header("Location:U1-1-2-passerror.php"); 
-            }    
+if($cnt == 0 && $_POST['password']==$_POST['pass_c']){
+    header("Location: " .$URL);
+    
+} else if($cnt > 0 && $_POST['password']==$_POST['pass_c']) {
+    header("Location:U1-1-2-loginerror.php");
+} else if($cnt == 0 && $_POST['password']!=$_POST['pass_c']){
+    header("Location:U1-1-2-passerror.php"); 
+} 
 
   ?>
