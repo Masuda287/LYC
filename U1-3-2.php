@@ -2,23 +2,28 @@
 <?php require 'db-connect.php'; ?>
 <?php require 'header.php'; ?>
 <?php require 'menu.php'; ?>
-
-    <h1>支払い方法</h1>
+    <div class="has-text-centered">
+    <div level>
+    <h1 class="is-size-3">支払い方法</h1>
     <div>
-    <h2>支払い方法を確認してください</h2>
-    <p>クレジット決済</p>
+    <h2 class="is-size-4">支払い方法を確認してください</h2>
+
             <?php
-              $pdo=new PDO($connect,USER,PASS);
-                echo 'カード番号',$_SESSION['Credit']['card_num'],'</br>';
-                echo '名義',$_SESSION['Credit']['card_name'],'</br>';
-                echo '有効年月',$_SESSION['Credit']['dl_m'],'月',$_SESSION['Credit']['dl_y'],'年</br>';
-                echo 'セキュリティコード',$_SESSION['Credit']['code'],'</br>';
+        echo '<table class="level-item">';
+                echo '<tr><td class="pb-3 level-left">クレジット決済</td></tr>';
+                echo '<tr><td class="pb-3">カード番号',$_SESSION['credit']['card_num'],'</td></tr>';
+                echo '<tr><td class="pb-3">名義',$_SESSION['credit']['card_name'],'</td></tr>';
+                echo '<tr><td class="pb-3">有効年月',$_SESSION['credit']['dl_m'],'月',$_SESSION['credit']['dl_y'],'年</td></tr>';
+                echo '<tr><td class="pb-3">セキュリティコード',$_SESSION['credit']['code'],'</td></tr>';
+        echo '</table>';
             ?>
     </div>
 
 <?php   
-        echo '<button type="button"><a href="U1-3-1-show.php">戻る</a></button>';
-        echo '<button type="button"><a href="U1-3-3.php">注文確認</a></button>';
+        echo '<a href="U1-3-1-show.php" class="button is-medium">戻る</a>';
+        echo '<a class="has-text-white">______________</a>';
+        echo '<a href="U1-3-3.php" class="button is-info is-medium">注文確認</a>';
 ?>
+    </div>
   
 <?php require 'footer.php'; ?>
