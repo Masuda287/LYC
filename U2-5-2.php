@@ -1,14 +1,10 @@
 <?php session_start(); ?>
-<?php session_start();?>
 <?php require 'db-connect.php';?>
 <?php require 'header.php'; ?>
 <?php require 'menu.php'; ?>
 <?php
-    $pdo=new PDO('mysql:host=mysql218.phy.lolipop.lan;dbname=LAA1518837-team;charset=utf8'
-    ,'LAA1518837'
-    ,'inhome');
-    $sql=$pdo->prepare(
-        'update Customer set delete_apply=1 where c_id=?');
+    $pdo=new PDO($connect,USER,PASS);
+    $sql=$pdo->prepare( 'update Customer set delete_apply=1 where c_id=?');
     $sql->execute([$_SESSION['customer']['c_id']]);
     unset($_SESSION['customer']);
 ?>
