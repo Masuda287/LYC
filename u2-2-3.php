@@ -1,25 +1,18 @@
 <?php session_start();?>
 <?php require 'db-connect.php';?>
 <?php require 'header.php';?>
-<?php require 'menu.php'; ?>
-
-<h1>登録完了</h1>
+<div class="has-text-centered">
+<h1 class="is-size-3">登録完了</h1>
 <?php
-$id = $_SESSION['customer']['c_id'];
 $pdo=new PDO($connect,USER,PASS);
-$sql=$pdo->prepare( 'insert into Credit values(?,?,?,?,?,?)');
-$sql->execute([$id,$_SESSION['toroku']['card_num'],$_SESSION['toroku']['card_name'],
-$_SESSION['toroku']['dl_m'],$_SESSION['toroku']['dl_y'],$_SESSION['toroku']['code']]);
-
-$_SESSION['Credit']=[
-    'c_id'=>$id, 'card_num'=>$_SESSION['toroku']['card_num'],
-    'card_name'=>$_SESSION['toroku']['card_name'],'dl_m'=>$_SESSION['toroku']['dl_m'],
-     'dl_y'=>$_SESSION['toroku']['dl_y'],'code'=>$_SESSION['toroku']['code']];
-
-unset($_SESSION['toroku']);
-echo 'クレジット情報を登録しました';
-echo '<p><a href="U1.php"><button type="button">ホーム</button></p>';
-
+$sql=$pdo->prepare('insert into Credit values(?,?,?,?,?,?)');
+$sql->execute([$_SESSION['customer']['c_id'],$_GET['card_num'],$_GET['card_name'],
+$_GET['dl_m'],$_GET['dl_y'],$_GET['code']]);
+echo '<div class="pt-6">クレジット情報を登録しました</div>';
+echo '<div class="pt-6">';
+echo '<a href="U2.php" class="button is-info ">ホーム</a>';
+echo '</div>';
 ?>
+</div>
 <?php require 'footer.php';?>
 
