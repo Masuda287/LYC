@@ -2,24 +2,14 @@
 <?php require 'db-connect.php';?>
 <?php require 'header.php';?>
 <?php require 'menu.php'; ?>
-<h1>更新完了</h1>
+<div class="has-text-centered">
+<h1 class="is-size-3 pb-3">更新完了</h1>
 <?php
-$pdo=new PDO($connect,USER,PASS);
 
-$id = $_SESSION['Credit']['c_id'];
-$sql=$pdo->prepare( 'update Credit set card_num=?,card_name=?,dl_m=?,dl_y=?,code=? where c_id=?');
-$sql->execute([$_SESSION['kosin']['card_num'],$_SESSION['kosin']['card_name'],
-$_SESSION['kosin']['dl_m'],$_SESSION['kosin']['dl_y'],$_SESSION['kosin']['code'],$id]);
-
-$_SESSION['Credit']=[
-    'c_id'=>$id,'card_num'=>$_SESSION['kosin']['card_num'],'card_name'=>$_SESSION['kosin']['card_name'],
-    'dl_m'=>$_SESSION['kosin']['dl_m'],'dl_y'=>$_SESSION['kosin']['dl_y'],'code'=>$_SESSION['kosin']['code']
-];
-unset($_SESSION['kosin']);
-echo 'クレジット情報を登録しました';
-echo '<p><a href="U1.php"><button type="button">ホーム</button></p>';
-
+echo '<div  class="pt-6">クレジット情報を更新しました</div>';
+echo '<div class="pt-6">';
+echo '<a href="U2.php" class="button is-info ">戻る</a>';
+echo '</div>'
 
 ?>
 <?php require 'footer.php';?>
-
