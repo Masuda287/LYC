@@ -2,21 +2,21 @@
 <?php require 'db-connect.php';?>
 <?php require 'header.php';?>
 <?php require 'menu.php'; ?>
-
-    <h1>クレジット情報更新</h1>
+    <div class="has-text-centered">
+    <div level>
+    <div class="is-size-3">クレジット情報更新</div>
 
 <?php
 echo '<form action="U2-2-5-term.php" method="post">';
-echo '<table>';
-echo '<tr><td>カード番号</td><td>';
+echo '<table class="level-item">';
+echo '<tr><td class="pb-3">カード番号</td><td>';
 echo '<input type="text" name="card_num" maxlength="16"  value="',$_SESSION['Credit']['card_num'],'">';
 echo '</td></tr>';
-echo '<tr><td>名義</td><td>';
+echo '<tr><td class="pb-3">名義</td><td>';
 echo '<input type="text" name="card_name"  value="',$_SESSION['Credit']['card_name'],'">';
 echo '</td></tr>';
-
-echo '<tr><td>有効期限</td><td>';
-echo '<td><select name="dl_m">';
+echo '<tr><td class="pb-3">有効期限</td><td>';
+echo '<td class="U2-2-1-td"><select name="dl_m">';
 echo '<option value=',$_SESSION['Credit']['dl_m'],'>',$_SESSION['Credit']['dl_m'],'</option>';
 echo '<option value=1>1</option>';
 echo '<option value=2>2</option>';
@@ -31,7 +31,7 @@ echo '<option value=10>10</option>';
 echo '<option value=11>11</option>';
 echo '<option value=12>12</option>';
 echo '</select>月</td>';
-echo '<td><select name="dl_y">';
+echo '<td class="U2-2-1-td"><select name="dl_y">';
 echo '<option value=',$_SESSION['Credit']['dl_y'],'>',$_SESSION['Credit']['dl_y'],'</option>';
 echo '<option value=23>23</option>';
 echo '<option value=24>24</option>';
@@ -42,11 +42,15 @@ echo '<option value=28>28</option>';
 echo '<option value=29>29</option>';
 echo '<option value=30>30</option>';
 echo '</select>年</td></tr>';
-echo '<tr><td>セキュリティーコード</td><td>';
+echo '<tr><td class="pb-3">セキュリティーコード</td><td>';
 echo '<input type="text" name="code" maxlength="3"  value="',$_SESSION['Credit']['code'],'">';
 echo '</td></tr>';
-echo'</table>';
-echo '<p><a href="U2-2-4.php"><button type="button">戻る</button></a><input type="submit" value="確認"></p>';
+echo '</table>';
+echo '<div class="pt-5">';
+echo '<a href="U2-2-4.php" class="button is-medium">戻る</a>';
+echo '<a class="has-text-white">______________</a>';
+echo '<a href="U2-2-6.php" class="button is-info is-medium">確認</a>';
+echo '</div>';
 echo '</form>';
 
 
